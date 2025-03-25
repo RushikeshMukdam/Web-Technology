@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Image</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/22b1609e95.js"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="Assets/back.png" id="backbtn">
+        <div class="gallery">
+            <div>
+                <span><img src="Assets/images1.jpg" alt=""></span>
+                <span><img src="Assets/image2.jpg" ></span>
+                <span><img src="Assets/images3.jpg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="Assets/images4.jpg" alt=""></span>
+                <span><img src="Assets/images5.jpg" ></span>
+                <span><img src="Assets/image7.jpg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="Assets/images8.jpg" alt=""></span>
+                <span><img src="Assets/janhvi-kapoor.jpg" ></span>
+                <span><img src="Assets/images3.jpg" alt=""></span>
+            </div>
+        </div>
+        <img src="Assets/next.png" id="nextbtn">
+    </div>
+    <!-- JAVASCRIPT To Scroll  -->
+<script>    
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backbtn");
+    let nextBtn = document.getElementById("nextbtn");
+
+// Scroll By Mouce
+    scrollContainer.addEventListener("wheel",(evt)=>{
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaX || evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto"
+    });
+    // Scroll By Btn
+    nextBtn.addEventListener("click",()=>{
+        scrollContainer.style.scrollBehavior = "smooth"
+        scrollContainer.scrollLeft += 900;
+    })
+    backBtn.addEventListener("click",()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    })
+    
+
+
+</script>
+</body>
+
+
+
+
+</html>
